@@ -8,6 +8,7 @@ var configConnection = require('./configBD');
 var user = require('./api/user');
 var livros = require('./api/livros');
 var avaliations = require('./api/avaliations');
+var admin = require('./api/admin');
 
 var app = express();
 var router = express.Router();
@@ -33,9 +34,23 @@ app.get('/home', function(req, res) {
     res.sendFile(path.join(__dirname + '/../public/views/index.html'));
 });
 
+app.get('/success', function(req, res) {
+    res.sendFile(path.join(__dirname + '/../public/views/index.html'));
+});
+
+app.get('/admin', function(req, res) {
+    res.sendFile(path.join(__dirname + '/../public/views/index.html'));
+});
+
+app.get('/dashboard', function(req, res) {
+    res.sendFile(path.join(__dirname + '/../public/views/index.html'));
+});
+
+
 
 app.use('/api/user', user);
 app.use('/api/livros', livros);
 app.use('/api/avaliation', avaliations);
+app.use('/api/admin', admin);
 
 module.exports = router;

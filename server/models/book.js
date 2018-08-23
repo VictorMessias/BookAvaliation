@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var bookSchema = new Schema({
-    nome: {type: String},
-    autor: {type: String}
+    name: {type: String},
+    author: {type: String}
 });
 
 var Book = mongoose.model('Book', bookSchema);

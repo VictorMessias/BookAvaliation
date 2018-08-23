@@ -2,8 +2,8 @@
     'use strict';
 
     angular
-        .module('aktienow').controller('IndexController', ['$scope', '$rootScope', '$http', '$location', 'IndexFactory',
-            function ($scope, $rootScope, $http, $location, IndexFactory) {
+        .module('aktienow').controller('IndexController', ['$scope', '$window', '$location', 'IndexFactory',
+            function ($scope, $window, $location, IndexFactory) {
 
               $scope.msgLoginUser = '';
              
@@ -17,10 +17,13 @@
                 IndexFactory.login(data)
                 .success(function(response){
                   if(response.success){
+                    // Salva o usuário que foi logado com sucesso, para utilizá-lo na avaliação
+                    $window.localStorage.setItem('username', $scope.loginForm.user);
+                    // Redireciona para a paǵina de avaliações
                     $location.path('/home');
                   }else{
                     if(response.message == 'NO_USER_FOUND'){
-                      $scope.msgLoginUser = 'Este email não está registrado!';
+                      $scope.msgLoginUser = 'Este usuário não está registrado!';
                     }
                   }
 
@@ -28,6 +31,8 @@
                     console.log(error);
                 });
 
+              }else{
+                $scope.msgLoginUser = 'Insira um usuário!';
               }
 
               };

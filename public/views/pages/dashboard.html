@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-8 main-container" ng-init="loadAvaliations()">
+            <h3>Painel administrativo</h3>
+
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Livro</th>
+                        <th scope="col">Nota</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Observação</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="avaliation in avaliations">
+                        <th scope="row">{{$index}}</th>
+                        <td>{{avaliation.bookID.nome}}</td>
+                        <td>{{avaliation.nota}}</td>
+                        <td>{{avaliation.estado}}</td>
+                        <td>{{avaliation.obs}}</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                  
+        </div>
+    </div>
+</div>

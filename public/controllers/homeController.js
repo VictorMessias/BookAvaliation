@@ -2,12 +2,17 @@
     'use strict';
 
     angular
-        .module('aktienow').controller('HomeController', ['$scope', '$rootScope', '$http', '$location', 'LivrosFactory', 'AvaliationFactory',
-            function ($scope, $rootScope, $http, $location, LivrosFactory, AvaliationFactory) {
+        .module('aktienow').controller('HomeController', ['$scope', '$rootScope', '$http', '$location', 'LivrosFactory', 'AvaliationFactory', '$window',
+            function ($scope, $rootScope, $http, $location, LivrosFactory, AvaliationFactory, $window) {
 
-              $scope.livros = ["AAAA", "BBBB"];
+              $scope.livros = [];
               $scope.notas = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-              $scope.estados = ["Òtimo", "Bom", "Regular", "Ruim"];
+              $scope.estados = ["Ótimo", "Bom", "Regular", "Ruim"];
+
+
+              // Get username
+              var username = $window.localStorage.getItem('username');
+
              
               (function(){
 
@@ -25,11 +30,11 @@
               })();
 
               $scope.salvar = function(valid){  
-                console.log(valid);
                 if(valid){
 
                   var data = {
-                      livroID: $scope.avaliation.livro,
+                      username: username,
+                      bookID: $scope.avaliation.livro,
                       nota: $scope.avaliation.nota,
                       estado: $scope.avaliation.estado,
                       obs: $scope.avaliation.obs
@@ -38,7 +43,10 @@
                   AvaliationFactory.addAvaliation(data)
                   .success(function(response){
                     if(response.success){
-                      //$scope.livros = response.data;
+                      $location.path('/success');
+                    }else{
+                      if(response.message == 'AVALIATION_ALREADY_MADE')
+                        $scope.msg = "Este livro já foi avaliado por você!";
                     }
   
                   }).error(function(error){

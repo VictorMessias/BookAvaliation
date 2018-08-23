@@ -2,3 +2,8 @@ body{
     margin: 0;
 
 }
+
+/* AVALIATION */
+.main-container{margin-top: 5em; padding: 10px; background: #f1f1f1; border-radius: 10px; border: 1px #ccc solid;}
+
+.main-container form textarea{resize: none;}

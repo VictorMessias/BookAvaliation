@@ -23,8 +23,41 @@
                 controller: 'HomeController'
                 }
             }
-            });
-  
+            })
+        .state('success', {
+            url: '/success',
+            views: {
+                'main-view': {
+                templateUrl: '/views/pages/success.html'
+                }
+            }
+            })
+        .state('admin', {
+            url: '/admin',
+            views: {
+                'main-view': {
+                templateUrl: '/views/pages/admin.html',
+                controller: 'AdminController'
+                }
+            }
+            })
+        .state('dashboard', {
+            url: '/dashboard',
+            views: {
+                'main-view': {
+                templateUrl: '/views/pages/dashboard.html',
+                controller: 'AdminController'
+                }
+            }
+            })
+        .state('otherwise', {
+            url: '*path',
+            views: {
+                'main-view': {
+                templateUrl: '/views/pages/404.html'
+                }
+            }
+        });
 
         if(window.history && window.history.pushState){
             $locationProvider.html5Mode({

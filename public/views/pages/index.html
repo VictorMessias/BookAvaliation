@@ -1,13 +1,13 @@
 <div class="container">
 <div class="row justify-content-md-center">
 
-    <div class="col-5">
+    <div class="col-5 main-container">
 
     <form name="loginForm" novalidate ng-submit="login(loginForm.$valid)">
         <div class="form-group">
             <label for="exampleInputEmail1">Usuário</label>
-            <input type="text" ng-required="true" ng-model="loginForm.user" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite o usuário">
-            <small id="emailHelp" class="form-text text-muted" ng-show="!loginForm.user.$valid" >{{msgLoginUser}}</small>
+            <input type="text" ng-required="true" ng-model="loginForm.user" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite o usuário" ng-class="{'is-invalid': (!loginForm.user.$valid && loginForm.$submitted)}">
+            <div class="invalid-feedback" ng-show="!loginForm.user.$valid && loginForm.$submitted">{{msgLoginUser}}</div>
         </div>
         <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
