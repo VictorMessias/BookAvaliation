@@ -3,8 +3,11 @@ var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var cors = require('cors');
+var configConnection = require('./configBD');
 
-var auth = require('./api/user');
+var user = require('./api/user');
+var livros = require('./api/livros');
+var avaliations = require('./api/avaliations');
 
 var app = express();
 var router = express.Router();
@@ -26,7 +29,13 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/../public/views/index.html'));
 });
 
+app.get('/home', function(req, res) {
+    res.sendFile(path.join(__dirname + '/../public/views/index.html'));
+});
 
-app.use('/asdasd', auth);
+
+app.use('/api/user', user);
+app.use('/api/livros', livros);
+app.use('/api/avaliation', avaliations);
 
 module.exports = router;

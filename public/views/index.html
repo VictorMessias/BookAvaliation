@@ -3,28 +3,31 @@
   <head>
     <title>Aktienow - Avaliação de livros</title>
     <link rel="stylesheet" href="/assets/stylesheets/index.css">
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+  
     <!-- JavaScript -->
     <script type="text/javascript" src="/libraries/angular/angular.min.js" ></script>
-    <script type="text/javascript" src="/libraries/angular-route/angular-route.min.js" ></script>
+    <script type="text/javascript" src="/libraries/angular-ui-router/angular-ui-router.min.js" ></script>
     <script type="text/javascript" src="/app.js" ></script>
     <script type="text/javascript" src="/route-config.js" ></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     
    
     <!-- Controllers -->
     <script type="text/javascript" src="/controllers/indexController.js" ></script>
+    <script type="text/javascript" src="/controllers/homeController.js" ></script>
     <!-- Factories -->
     <script type="text/javascript" src="/factories/indexFactory.js" ></script>
+    <script type="text/javascript" src="/factories/livrosFactory.js" ></script>
+    <script type="text/javascript" src="/factories/avaliationFactory.js" ></script>
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
   </head>
 
-  <body ng-app="aktienow">
-
-    <div ui-view="main-view" id="main">
-
-      
-    </div>
-  
-
+  <body ng-app="aktienow" ui-view="main-view">
   </body>
 </html>

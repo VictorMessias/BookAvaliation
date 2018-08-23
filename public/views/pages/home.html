@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-10">
+            <h3>Avalie livros</h3>
+
+            <form name="avaliationForm" novalidate ng-submit="salvar(avaliationForm.$valid)">
+                <div class="form-group">
+                    <label for="livro">Livro</label>
+                    <select class="form-control" id="livro" name="avaliationForm.livros" ng-model="avaliation.livro" ng-required="true">
+                        <option>Selecione um livro</option>
+                        <option ng-repeat="livro in livros" ng-value="livro._id">{{livro.nome}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="nota">Nota</label>
+                    <select class="form-control" id="nota" name="avaliationForm.nota"  ng-model="avaliation.nota" ng-required="true">
+                        <option ng-selected="true">Selecione uma nota</option>
+                        <option ng-repeat="nota in notas" ng-value="nota">{{nota}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="nota">Estado</label>
+                    <select class="form-control" id="nota" name="avaliationForm.estado"  ng-model="avaliation.estado" ng-required="true">
+                        <option>Selecione um estado</option>
+                        <option ng-repeat="estado in estados" ng-value="estado">{{estado}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="obs">Observações</label>
+                    <textarea class="form-control" id="obs" placeholder="Digite uma observação" ng-model="avaliation.obs" name="avaliationForm.obs" >
+                    </textarea>
+                </div> 
+
+                <button type="submit" class="btn btn-primary">Salvar</button>
+
+            </form>
+        </div>
+    </div>
+</div>

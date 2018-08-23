@@ -15,25 +15,23 @@
                 }
               }
             })
-            .state('main.home', {
-              url: '/home',
-              views: {
+        .state('home', {
+            url: '/home',
+            views: {
                 'main-view': {
-                  templateUrl: '/views/pages/home.html',
-                  controller: 'HomeController'
+                templateUrl: '/views/pages/home.html',
+                controller: 'HomeController'
                 }
-              }
-            })
-         
+            }
+            });
+  
 
-
-
-        // if(window.history && window.history.pushState){
-        //     $locationProvider.html5Mode({
-        //         enabled: true,
-        //         requireBase: false
-        //     });
-        //   }
+        if(window.history && window.history.pushState){
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+            });
+          }
     }
 
 // app.run(['$rootScope', 'AuthFactory', '$state', function($rootScope, AuthFactory, $state){
