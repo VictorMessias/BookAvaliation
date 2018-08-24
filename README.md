@@ -23,9 +23,15 @@ Front End: AngularJS (1.5)
 
 PASSOS PARA INICIAR A APLICAÇÃO:
 
-Primeiro deve-se iniciar o MongoDB, para isso abra o terminal do linux e digite: mongod
+Primeiro deve-se iniciar o MongoDB, para isso abra o terminal do linux e digite: 
 
-Depois, para iniciar a aplicação, basta abrir o terminal na pasta "server" e digitar o comando: node app
+	$ mongod
+	
+
+Depois, para iniciar a aplicação, basta abrir o terminal na pasta "server" e digitar o comando:
+
+	$ node app
+	
 Pronto! Agora acesse o seu localhost com a porta 3000, localhost:3000
 
 
