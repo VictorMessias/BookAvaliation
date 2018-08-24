@@ -1,0 +1,35 @@
+<ng-include src="'/views/includes/header.html'"></ng-include>
+<div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-8 main-container" ng-init="loadLivros()">
+                <h3>Informações sobre livros</h3>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Livro</th>
+                            <th scope="col">Média Nota</th>
+                            <th scope="col">% Ótimo</th>
+                            <th scope="col">% Bom</th>
+                            <th scope="col">% Regular</th>
+                            <th scope="col">% Ruim</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="livro in livros">
+                            <th scope="row">{{$index}}</th>
+                            <td>{{livro.name}}</td>
+                            <td>{{livro.mediaNota}}</td>
+                            <td>{{livro.mediaOtimo}}%</td>
+                            <td>{{livro.mediaBom}}%</td>
+                            <td>{{livro.mediaRegular}}%</td>
+                            <td>{{livro.mediaRuim}}%</td>
+                          </tr>
+    
+                        </tbody>
+                      </table>
+                      
+            </div>
+        </div>
+    </div>
+    

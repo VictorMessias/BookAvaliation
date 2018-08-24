@@ -41,11 +41,38 @@
                 }
             }
             })
-        .state('dashboard', {
-            url: '/dashboard',
+        .state('dashboard-user', {
+            url: '/dashboard-user',
             views: {
                 'main-view': {
-                templateUrl: '/views/pages/dashboard.html',
+                templateUrl: '/views/pages/dashboard_user.html',
+                controller: 'AdminController'
+                }
+            }
+            })
+        .state('dashboard-book', {
+            url: '/dashboard-book',
+            views: {
+                'main-view': {
+                templateUrl: '/views/pages/dashboard_livros.html',
+                controller: 'AdminController'
+                }
+            }
+            })
+        .state('newUser', {
+            url: '/add-user',
+            views: {
+                'main-view': {
+                templateUrl: '/views/pages/add_user.html',
+                controller: 'AdminController'
+                }
+            }
+            })
+        .state('newBook', {
+            url: '/add-book',
+            views: {
+                'main-view': {
+                templateUrl: '/views/pages/add_book.html',
                 controller: 'AdminController'
                 }
             }

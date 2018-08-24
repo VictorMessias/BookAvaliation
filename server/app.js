@@ -42,10 +42,21 @@ app.get('/admin', function(req, res) {
     res.sendFile(path.join(__dirname + '/../public/views/index.html'));
 });
 
-app.get('/dashboard', function(req, res) {
+app.get('/dashboard-user', function(req, res) {
     res.sendFile(path.join(__dirname + '/../public/views/index.html'));
 });
 
+app.get('/dashboard-book', function(req, res) {
+    res.sendFile(path.join(__dirname + '/../public/views/index.html'));
+});
+
+app.get('/add-user', function(req, res) {
+    res.sendFile(path.join(__dirname + '/../public/views/index.html'));
+});
+
+app.get('/add-book', function(req, res) {
+    res.sendFile(path.join(__dirname + '/../public/views/index.html'));
+});
 
 
 app.use('/api/user', user);

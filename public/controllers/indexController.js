@@ -11,14 +11,14 @@
               $scope.login = function(valid){
                 if(valid){
                 var data = {
-                    username: $scope.loginForm.user
+                    username: $scope.loginData.user
                 };
 
                 IndexFactory.login(data)
                 .success(function(response){
                   if(response.success){
                     // Salva o usuário que foi logado com sucesso, para utilizá-lo na avaliação
-                    $window.localStorage.setItem('username', $scope.loginForm.user);
+                    $window.localStorage.setItem('username', $scope.loginData.user);
                     // Redireciona para a paǵina de avaliações
                     $location.path('/home');
                   }else{

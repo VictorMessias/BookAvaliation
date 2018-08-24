@@ -30,6 +30,7 @@
               })();
 
               $scope.salvar = function(valid){  
+                
                 if(valid){
 
                   var data = {
@@ -47,6 +48,8 @@
                     }else{
                       if(response.message == 'AVALIATION_ALREADY_MADE')
                         $scope.msg = "Este livro já foi avaliado por você!";
+
+                        console.log($scope.avaliationForm.estado);
                     }
   
                   }).error(function(error){

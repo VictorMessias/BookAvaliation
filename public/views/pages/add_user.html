@@ -1,0 +1,51 @@
+<ng-include src="'/views/includes/header.html'"></ng-include>
+<div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-8 main-container">
+                <h3>Adicionar usuário</h3>
+    
+                <div class="alert alert-success" role="alert" ng-if="msgSuccess">{{msgSuccess}}</div>
+
+                <div class="alert alert-danger" role="alert" ng-if="msgError">{{msgError}}</div>
+
+
+                <form name="newUserForm" novalidate ng-submit="saveUser(newUserForm.$valid)">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" class="form-control" id="name" name="name" ng-model="newUser.name" placeholder="Insira o nome" ng-class="{'is-invalid': !newUserForm.name.$valid && newUserForm.$submitted}" ng-required="true" />
+                        <div class="invalid-feedback">Por favor, insira o nome!</div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" ng-model="newUser.username" placeholder="Insira o username" ng-class="{'is-invalid': !newUserForm.username.$valid && newUserForm.$submitted}" ng-required="true"/>
+                        <div class="invalid-feedback">Por favor, insira o username!</div>
+                    </div>
+
+                    <label for="username">Admin</label>
+                    <div class="form-check">
+                        <input type="radio" ng-checked="true" id="yes" class="form-check-input" name="admin" ng-model="newUser.admin"  ng-value="0" />  <label class="form-check-label" for="yes">Não</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input type="radio" id="no" class="form-check-input" name="admin" ng-model="newUser.admin" ng-value="1" />
+                    <label class="form-check-label" for="no">Sim</label>
+                    </div>
+    
+                    <div class="form-group" ng-show="newUser.admin">
+                        <label for="username">Senha</label>
+                        <input type="password" class="form-control" id="username" name="password" ng-model="newUser.password" placeholder="Insira a senha" ng-class="{'is-invalid': !newUserForm.password.$valid && newUserForm.$submitted}"/>
+                        <div class="invalid-feedback">Por favor, insira uma senha!</div>
+                    </div>
+                    
+          
+    
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+    
+                    
+    
+                </form>
+            </div>
+        </div>
+    </div>
+    

@@ -7,14 +7,16 @@
         
             <form name="loginForm" novalidate ng-submit="login(loginForm.$valid)">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Usuário</label>
-                    <input type="text" ng-required="true" ng-model="loginForm.user" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite o usuário">
+                    <label for="username">Usuário</label>
+                    <input type="text" ng-required="true" ng-model="loginData.user" class="form-control" id="username" name="username" placeholder="Digite o usuário" ng-class="{'is-invalid': !loginForm.username.$valid && loginForm.$submitted}">
+                    <div class="invalid-feedback">Por favor, insira o usuário!</div>
                 </div>
 
                 <div class="form-group">
-                        <label for="exampleInputEmail1">Senha</label>
-                        <input type="password" ng-required="true" ng-model="loginForm.password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite a senha" >
-                    </div>
+                    <label for="password">Senha</label>
+                    <input type="password" ng-required="true" ng-model="loginData.password" class="form-control" id="password" name="password" placeholder="Digite a senha" ng-class="{'is-invalid': !loginForm.password.$valid && loginForm.$submitted}" />
+                    <div class="invalid-feedback">Por favor, insira a senha!</div>
+                </div>
 
 
                 <button type="submit" class="btn btn-primary">Entrar</button>
