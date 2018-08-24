@@ -5,15 +5,15 @@ Sistema de avaliações de livros
 
 Informações sobre a aplicação:
 Back end: NodeJs 8
-  - Como instalar (LINUX - UBUNTU):
+  - Como instalar o Nodejs (LINUX - UBUNTU):
     Digite os comandos no terminal:
-        curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-        sudo apt-get install -y nodejs
+         - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+         - sudo apt-get install -y nodejs
 
 
 
 Banco de Dados: MongoDB
-  - Como instalar (LINUX - UBUNTU)
+  - Como instalar o MongoDB (LINUX - UBUNTU)
     Leia o artigo completo de como instalar o MongoDB
       https://hevodata.com/blog/install-mongodb-on-ubuntu/
       
